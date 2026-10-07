@@ -7,7 +7,10 @@ export interface Project {
   flow: string[];
   stack: string[];
   features: string[];
-  hasLiveDemo: boolean;
+  /** Live demo URL. Button is hidden when empty. */
+  liveUrl?: string;
+  /** This project's own repository URL. Button is hidden when empty. */
+  githubUrl?: string;
 }
 
 export interface TitledItem {
@@ -20,7 +23,7 @@ export interface ProcessStep extends TitledItem {
 }
 
 export interface SocialLinks {
-  github: string;
+  githubProfileUrl: string;
   linkedin: string;
   email: string;
 }

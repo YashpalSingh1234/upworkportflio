@@ -1,5 +1,11 @@
 import type { Project } from "@/types";
 
+/**
+ * Link fields:
+ * - liveUrl:   live demo URL. The Live Demo button renders only when set.
+ * - githubUrl: the project's own repository URL. The GitHub button renders only when set.
+ *              Leave "" until the exact repository URL is known. CVKing is private: keep it "".
+ */
 export const projects: Project[] = [
   {
     id: "01",
@@ -10,7 +16,8 @@ export const projects: Project[] = [
     flow: ["Documents", "Chunking", "Embeddings", "Vector DB", "Semantic Retrieval", "Context", "LLM", "Answer"],
     stack: ["Python", "LangChain", "Chroma", "Sentence Transformers", "LLM", "RAG"],
     features: ["Document ingestion", "Chunking", "Embeddings", "Semantic search", "Top-K retrieval", "Context-aware generation", "Grounded responses", "Hallucination reduction"],
-    hasLiveDemo: false,
+    liveUrl: "", // TODO: add live demo URL if one exists
+    githubUrl: "", // TODO: add the RAG AI Assistant repository URL
   },
   {
     id: "02",
@@ -21,7 +28,8 @@ export const projects: Project[] = [
     flow: ["Resume Upload", "LLM Analysis", "ATS Score", "Suggestions", "Roadmap & Job Matching"],
     stack: ["Next.js", "PostgreSQL", "Prisma", "AI APIs", "LLMs", "Tailwind CSS"],
     features: ["AI Resume Analysis", "ATS Score", "AI Resume Suggestions", "AI Resume Builder", "AI Career Roadmap", "AI Job Matching"],
-    hasLiveDemo: true,
+    liveUrl: "https://cvking.in",
+    githubUrl: "", // private project: intentionally no repository link
   },
   {
     id: "03",
@@ -32,7 +40,8 @@ export const projects: Project[] = [
     flow: ["Dataset", "Training", "Fine-Tuning", "Evaluation", "Inference"],
     stack: ["Python", "YOLO", "OpenCV", "Deep Learning"],
     features: ["Custom dataset", "Object detection", "Fine-tuning", "Computer vision pipeline", "Real-time prediction"],
-    hasLiveDemo: false,
+    liveUrl: "", // TODO: add live demo URL if one exists
+    githubUrl: "", // TODO: add the YOLO project repository URL
   },
   {
     id: "04",
@@ -43,6 +52,7 @@ export const projects: Project[] = [
     flow: ["Data", "Preprocessing", "Training", "Evaluation", "FastAPI", "Deployment"],
     stack: ["Python", "Scikit-learn", "FastAPI", "Docker"],
     features: ["Data preprocessing", "Model training", "Evaluation", "REST API", "Deployment"],
-    hasLiveDemo: false,
+    liveUrl: "", // TODO: add live demo URL if one exists
+    githubUrl: "", // TODO: add the End-to-End ML repository URL
   },
 ];

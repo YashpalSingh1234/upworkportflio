@@ -13,7 +13,7 @@ export function Contact() {
           <a href="#work" className="btn border border-line text-white">View My Work</a>
         </div>
         <div className="mt-8 flex justify-center gap-6 text-zinc-400">
-          <a href={socialLinks.github} aria-label="GitHub" className="hover:text-white"><Github /></a>
+          <a href={socialLinks.githubProfileUrl} aria-label="GitHub" className="hover:text-white"><Github /></a>
           <a href={socialLinks.linkedin} aria-label="LinkedIn" className="hover:text-white"><Linkedin /></a>
           <a href={socialLinks.email} aria-label="Email" className="hover:text-white"><Mail /></a>
         </div>

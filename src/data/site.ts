@@ -2,9 +2,9 @@ import type { SocialLinks } from "@/types";
 
 export const navigation = ["Home", "Work", "Services", "Skills", "About", "Contact"] as const;
 
-// TODO: replace placeholders with real URLs
+// TODO: replace the LinkedIn and email placeholders with real values
 export const socialLinks: SocialLinks = {
-  github: "#",
+  githubProfileUrl: "https://github.com/YashpalSingh1234",
   linkedin: "#",
   email: "mailto:your-email@example.com",
 };

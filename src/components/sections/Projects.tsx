@@ -5,7 +5,6 @@ import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { projects } from "@/data/projects";
-import { socialLinks } from "@/data/site";
 
 export function Projects() {
   return (
@@ -36,10 +35,12 @@ export function Projects() {
                 </div>
                 <div>
                   <ul className="grid gap-2 text-sm sm:grid-cols-2">{p.features.map((f) => <li key={f} className="text-zinc-400"><span className="text-accent">▸ </span>{f}</li>)}</ul>
-                  <div className="mt-6 flex gap-3">
-                    <a href={socialLinks.github} className="btn border border-line text-white"><Github size={16} /> GitHub</a>
-                    {p.hasLiveDemo && <a href="#" className="btn bg-white text-black"><ExternalLink size={16} /> Live Demo</a>}
-                  </div>
+                  {(p.githubUrl || p.liveUrl) && (
+                    <div className="mt-6 flex gap-3">
+                      {p.githubUrl && <a href={p.githubUrl} className="btn border border-line text-white"><Github size={16} /> GitHub</a>}
+                      {p.liveUrl && <a href={p.liveUrl} className="btn bg-white text-black"><ExternalLink size={16} /> Live Demo</a>}
+                    </div>
+                  )}
                 </div>
               </div>
             </motion.article>
