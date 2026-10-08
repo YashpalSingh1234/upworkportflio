@@ -29,6 +29,7 @@ export const projects: Project[] = [
     stack: ["Next.js", "PostgreSQL", "Prisma", "AI APIs", "LLMs", "Tailwind CSS"],
     features: ["AI Resume Analysis", "ATS Score", "AI Resume Suggestions", "AI Resume Builder", "AI Career Roadmap", "AI Job Matching"],
     liveUrl: "https://cvking.in",
+    hasArchitecture: true,
     githubUrl: "", // private project: intentionally no repository link
   },
   {

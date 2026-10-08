@@ -12,7 +12,7 @@ export function FlowDiagram({ steps = DEFAULT_STEPS }: { steps?: string[] }) {
           <motion.div
             animate={{ borderColor: ["#1c232d", "#7cc4ff", "#1c232d"] }}
             transition={{ duration: 3, repeat: Infinity, delay: i * 0.5 }}
-            className="rounded-lg border bg-ink px-5 py-2.5 text-zinc-200"
+            className="rounded-lg border bg-ink px-5 py-2.5 text-center text-zinc-200"
           >
             {s}
           </motion.div>

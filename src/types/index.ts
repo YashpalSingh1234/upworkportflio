@@ -11,6 +11,8 @@ export interface Project {
   liveUrl?: string;
   /** This project's own repository URL. Button is hidden when empty. */
   githubUrl?: string;
+  /** Shows a "View Architecture" button that opens the CVKing architecture modal. */
+  hasArchitecture?: boolean;
 }
 
 export interface TitledItem {

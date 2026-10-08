@@ -1,13 +1,17 @@
 "use client";
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Github, ExternalLink } from "lucide-react";
+import { Github, ExternalLink, Network } from "lucide-react";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { projects } from "@/data/projects";
+import { CVKingArchitectureModal } from "@/components/architecture/CVKingArchitectureModal";
 
 export function Projects() {
+  const [architectureOpen, setArchitectureOpen] = useState(false);
   return (
+    <>
     <Section id="work">
       <SectionHeading eyebrow="Work" title="Selected Work" subtitle="AI systems and products built with modern machine learning and generative AI technologies." />
       <div className="space-y-8">
@@ -35,10 +39,11 @@ export function Projects() {
                 </div>
                 <div>
                   <ul className="grid gap-2 text-sm sm:grid-cols-2">{p.features.map((f) => <li key={f} className="text-zinc-400"><span className="text-accent">▸ </span>{f}</li>)}</ul>
-                  {(p.githubUrl || p.liveUrl) && (
-                    <div className="mt-6 flex gap-3">
+                  {(p.githubUrl || p.liveUrl || p.hasArchitecture) && (
+                    <div className="mt-6 flex flex-wrap gap-3">
                       {p.githubUrl && <a href={p.githubUrl} className="btn border border-line text-white"><Github size={16} /> GitHub</a>}
                       {p.liveUrl && <a href={p.liveUrl} className="btn bg-white text-black"><ExternalLink size={16} /> Live Demo</a>}
+                      {p.hasArchitecture && <button type="button" onClick={() => setArchitectureOpen(true)} className="btn border border-accent/50 text-white hover:border-accent"><Network size={16} /> View Architecture</button>}
                     </div>
                   )}
                 </div>
@@ -48,5 +53,7 @@ export function Projects() {
         ))}
       </div>
     </Section>
+    <CVKingArchitectureModal open={architectureOpen} onClose={() => setArchitectureOpen(false)} />
+    </>
   );
 }
